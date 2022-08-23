@@ -13,6 +13,7 @@ function App() {
     }
   };
 
+  // Handle checkbox click
   const handleCheck = () => {
     setIsChecked(!isChecked);
   }
