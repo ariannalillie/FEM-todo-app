@@ -15,12 +15,19 @@ function App() {
     <div>
       <h1 className="header">TODO</h1>
       <div className="todo-list-container">
-        <input className="input" type="text" onKeyDown={(e) => handleKeyDown(e)} />
+        <input
+          className="input"
+          type="text"
+          onKeyDown={(e) => handleKeyDown(e)}
+        />
         {todos.map((todo, idx) => {
           return (
-            <div key={idx} className="list-item">
-              {todo}
-            </div>
+            <>
+              <div key={idx} className="list-item">
+              <input type="checkbox"></input>
+                {todo}
+              </div>
+            </>
           );
         })}
       </div>
