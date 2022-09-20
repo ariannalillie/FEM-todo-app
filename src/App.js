@@ -12,12 +12,18 @@ function App() {
   };
 
   return (
-    <div className="todo-list">
+    <div>
       <h1 className="header">TODO</h1>
-      <input type="text" onKeyDown={(e) => handleKeyDown(e)} />
-      {todos.map((todo, idx) =>  {
-        return <div key={idx}>{todo}</div>;
-      })}
+      <div className="todo-list-container">
+        <input className="input" type="text" onKeyDown={(e) => handleKeyDown(e)} />
+        {todos.map((todo, idx) => {
+          return (
+            <div key={idx} className="list-item">
+              {todo}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
