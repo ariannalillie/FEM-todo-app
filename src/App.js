@@ -7,6 +7,7 @@ function App() {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       setTodos([...todos, e.target.value]);
+      e.target.value = "";
     }
   };
 
