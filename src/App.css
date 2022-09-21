@@ -3,14 +3,6 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  background: url("./images/bg-desktop-light.jpg") no-repeat center top;
-  background-size: contain;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
   font-family: "Josefin Sans", sans-serif;
 }
 
@@ -30,11 +22,33 @@ body {
   align-items: center;
   padding: 5px 0;
   border-bottom: 1px solid rgb(196, 196, 196);
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(100, 100, 111, 0.349) 0px 7px 29px 0px;
+}
+
+.list-item-dark {
+  background-color: hsl(235, 24%, 19%);
+  color: white;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid rgb(196, 196, 196);
+  box-shadow: rgb(0, 0, 0) 0px 7px 29px 0px;
 }
 
 .input {
   background-color: white;
+  width: 100%;
+  padding: 20px 0;
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+.input-dark {
+  background-color: hsl(235, 24%, 19%);
+  color: white;
   width: 100%;
   padding: 20px 0;
   border: none;
@@ -100,4 +114,28 @@ body {
   animation-timing-function: linear;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+
+.background {
+  height: 100vh;
+  background: url("./images/bg-desktop-light.jpg") no-repeat center top;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.background-dark {
+  height: 100vh;
+  background: url("./images/bg-desktop-light.jpg") no-repeat center top;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: hsl(235, 21%, 11%);
 }

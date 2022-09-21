@@ -27,7 +27,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className={isDark ? "background-dark": "background"}>
       <div className="todo-list-container">
         <div className="top-container">
           <h1 className="header">TODO</h1>
@@ -38,7 +38,7 @@ function App() {
           />
         </div>
         <input
-          className="input"
+          className={isDark ? "input-dark" : "input"}
           type="text"
           placeholder="Create a new todo..."
           onKeyDown={(e) => handleKeyDown(e)}
@@ -46,7 +46,10 @@ function App() {
         {todos.map((todo, idx) => {
           return (
             <>
-              <div key={idx} className="list-item">
+              <div
+                key={idx}
+                className={isDark ? "list-item-dark" : "list-item"}
+              >
                 <div
                   className={isChecked ? "checked" : "checkbox"}
                   onClick={handleCheck}
