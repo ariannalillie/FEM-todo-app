@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import moon from "./images/icon-moon.svg";
 import sun from "./images/icon-sun.svg";
 import { Todo } from "./Todo";
@@ -18,6 +18,30 @@ function App() {
   // Handle toggling between dark and light mode
   const toggleTheme = () => {
     setIsDark(!isDark);
+  };
+
+
+  const dragItem = useRef();
+  const dragOverItem = useRef();
+
+  const dragStart = (e, position) => {
+    console.log(dragItem.current = position);
+    console.log(e.target.innerHTML);
+  };
+
+  const dragEnter = (e, position) => {
+    console.log(dragOverItem.current = position);
+    console.log(e.target.innerHTML);
+  };
+
+  const drop = () => {
+    const copyListItems = [...todos];
+    const dragItemContent = copyListItems[dragItem.current];
+    copyListItems.splice(dragItem.current, 1);
+    copyListItems.splice(dragOverItem.current, 0, dragItemContent);
+    dragItem.current = null;
+    dragOverItem.current = null;
+    setTodos(copyListItems);
   };
 
   return (
@@ -44,6 +68,9 @@ function App() {
               idx={idx}
               isDark={isDark}
               checkboxClass="checked"
+              drop={drop}
+              dragEnter={dragEnter}
+              dragStart={dragStart}
             />
           );
         })}

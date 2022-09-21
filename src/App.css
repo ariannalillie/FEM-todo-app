@@ -23,6 +23,7 @@ body {
   padding: 5px 0;
   border-bottom: 1px solid rgb(196, 196, 196);
   box-shadow: rgba(100, 100, 111, 0.349) 0px 7px 29px 0px;
+  cursor: pointer;
 }
 
 .list-item-dark {
@@ -35,6 +36,7 @@ body {
   padding: 5px 0;
   border-bottom: 1px solid rgb(196, 196, 196);
   box-shadow: rgb(0, 0, 0) 0px 7px 29px 0px;
+  cursor: pointer;
 }
 
 .input {
