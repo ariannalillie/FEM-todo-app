@@ -48,9 +48,7 @@ function App() {
             <Todo
               todo={todo}
               idx={idx}
-              handleCheck={handleCheck}
               isDark={isDark}
-              isChecked={isChecked}
               checkboxClass="checked"
             />
           );

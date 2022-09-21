@@ -1,12 +1,14 @@
 import checkIcon from "./images/icon-check.svg";
+import { useState } from "react";
 
-export const Todo = ({ todo, idx, handleCheck, isDark, isChecked }) => {
+export const Todo = ({ todo, idx, isDark}) => {
+  const [isChecked, setIsChecked] = useState(false);
   return (
     <>
       <div key={idx} className={isDark ? "list-item-dark" : "list-item"}>
         <div
           className={isChecked ? "checked" : "checkbox"}
-          onClick={handleCheck}
+          onClick={() => setIsChecked(!isChecked)}
         >
           {isChecked && <img src={checkIcon} alt="check icon" />}
         </div>
