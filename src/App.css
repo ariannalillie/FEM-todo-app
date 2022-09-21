@@ -45,4 +45,22 @@ body {
 
 .checkbox {
   margin: 20px;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid rgb(210, 209, 209);
+  border-radius: 50%;
 }
+
+.checked {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid rgb(210, 209, 209);
+  border-radius: 50%;
+  background-image: linear-gradient(to right bottom, #57ddff, #c058f3);
+}
+
+

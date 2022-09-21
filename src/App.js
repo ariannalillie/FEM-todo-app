@@ -1,8 +1,10 @@
 import "./App.css";
 import { useState } from "react";
+import checkIcon from './images/icon-check.svg';
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -10,6 +12,10 @@ function App() {
       e.target.value = "";
     }
   };
+
+  const handleCheck = () => {
+    setIsChecked(!isChecked);
+  }
 
   return (
     <div>
@@ -25,7 +31,9 @@ function App() {
           return (
             <>
               <div key={idx} className="list-item">
-              <input className="checkbox" type="checkbox"></input>
+                <div className={isChecked ? 'checked' : "checkbox"} onClick={handleCheck}>
+                  {isChecked && <img src={checkIcon} alt="check icon" />}
+                </div>
                 {todo}
               </div>
             </>
