@@ -6,7 +6,6 @@ import { Todo } from "./Todo";
 
 function App() {
   const [todos, setTodos] = useState([]);
-  const [isChecked, setIsChecked] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
   const handleKeyDown = (e) => {
@@ -14,11 +13,6 @@ function App() {
       setTodos([...todos, e.target.value]);
       e.target.value = "";
     }
-  };
-
-  // Handle checkbox click
-  const handleCheck = () => {
-    setIsChecked(!isChecked);
   };
 
   // Handle toggling between dark and light mode
