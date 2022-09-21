@@ -68,4 +68,9 @@ body {
   background-image: linear-gradient(to right bottom, #57ddff, #c058f3);
 }
 
+.checked-todo {
+  text-decoration: line-through;
+  color: rgb(196, 196, 196);
+}
+
 

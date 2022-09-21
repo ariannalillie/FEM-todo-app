@@ -35,7 +35,7 @@ function App() {
                 <div className={isChecked ? 'checked' : "checkbox"} onClick={handleCheck}>
                   {isChecked && <img src={checkIcon} alt="check icon" />}
                 </div>
-                {todo}
+                <p className={isChecked ? 'checked-todo' : ""}>{todo}</p>
               </div>
             </>
           );
