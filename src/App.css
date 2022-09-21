@@ -8,7 +8,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(234, 217, 234);
   position: relative;
 }
 
@@ -28,6 +27,7 @@ body {
   align-items: center;
   padding: 5px 0;
   border-bottom: 1px solid rgb(196, 196, 196);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .input {

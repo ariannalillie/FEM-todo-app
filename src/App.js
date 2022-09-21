@@ -18,6 +18,7 @@ function App() {
         <input
           className="input"
           type="text"
+          placeholder="Create a new todo..."
           onKeyDown={(e) => handleKeyDown(e)}
         />
         {todos.map((todo, idx) => {
