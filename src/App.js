@@ -1,8 +1,8 @@
 import "./App.css";
 import { useState } from "react";
-import checkIcon from "./images/icon-check.svg";
 import moon from "./images/icon-moon.svg";
 import sun from "./images/icon-sun.svg";
+import { Todo } from "./Todo";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -27,7 +27,7 @@ function App() {
   };
 
   return (
-    <div className={isDark ? "background-dark": "background"}>
+    <div className={isDark ? "background-dark" : "background"}>
       <div className="todo-list-container">
         <div className="top-container">
           <h1 className="header">TODO</h1>
@@ -45,20 +45,14 @@ function App() {
         />
         {todos.map((todo, idx) => {
           return (
-            <>
-              <div
-                key={idx}
-                className={isDark ? "list-item-dark" : "list-item"}
-              >
-                <div
-                  className={isChecked ? "checked" : "checkbox"}
-                  onClick={handleCheck}
-                >
-                  {isChecked && <img src={checkIcon} alt="check icon" />}
-                </div>
-                <p className={isChecked ? "checked-todo" : ""}>{todo}</p>
-              </div>
-            </>
+            <Todo
+              todo={todo}
+              idx={idx}
+              handleCheck={handleCheck}
+              isDark={isDark}
+              isChecked={isChecked}
+              checkboxClass="checked"
+            />
           );
         })}
       </div>
