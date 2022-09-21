@@ -13,8 +13,8 @@ function App() {
 
   return (
     <div>
-      <h1 className="header">TODO</h1>
       <div className="todo-list-container">
+      <h1 className="header">TODO</h1>
         <input
           className="input"
           type="text"
@@ -24,7 +24,7 @@ function App() {
           return (
             <>
               <div key={idx} className="list-item">
-              <input type="checkbox"></input>
+              <input className="checkbox" type="checkbox"></input>
                 {todo}
               </div>
             </>

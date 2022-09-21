@@ -2,19 +2,22 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  /* background: url('./images/bg-desktop-light.jpg') no-repeat center;
-  background-size: cover;
-  height: 40vh; */
+  background: url('./images/bg-desktop-light.jpg') no-repeat center top;
+  background-size: contain;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: plum;
+  background-color: rgb(234, 217, 234);
+  position: relative;
 }
 
 .todo-list-container {
   height: 60%;
   width: 500px;
+  position: absolute;
+  top: 20%;
+  left: 35%;
 }
 
 .list-item {
@@ -38,4 +41,8 @@ body {
 .header {
   letter-spacing: 3px;
   color: white;
+}
+
+.checkbox {
+  margin: 20px;
 }
