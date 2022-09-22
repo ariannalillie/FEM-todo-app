@@ -5,7 +5,7 @@ import sun from "./images/icon-sun.svg";
 import { Todo } from "./Todo";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(['Jog around the park 3x', '10 minutes meditation', 'Read for 1 hour', 'Pick up groceries', 'Complete Todo App on Frontend Mentor']);
   const [isDark, setIsDark] = useState(false);
 
   const handleKeyDown = (e) => {
