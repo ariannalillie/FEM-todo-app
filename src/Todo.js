@@ -3,17 +3,28 @@ import { useState } from "react";
 
 export const Todo = ({ todo, idx, isDark, draggedItem, dragOverItem, handleSort}) => {
   const [isChecked, setIsChecked] = useState(false);
+  const [dragStarted, setDragStarted] = useState(false);
 
+  const startDrag = () => {
+    draggedItem.current = idx;
+    setDragStarted(true);
+  };
+
+  const endDrag = () => {  
+    setDragStarted(false);
+    handleSort();
+  };
 
   return (
     <>
       <div
         key={idx}
         className={isDark ? "list-item-dark" : "list-item"}
+        style={{ opacity: dragStarted ? .3 : 1 }}
         draggable
-        onDragStart={(e) => draggedItem.current = idx}
+        onDragStart={startDrag}
         onDragEnter={(e) => dragOverItem.current = idx}
-        onDragEnd={handleSort}
+        onDragEnd={endDrag}
         onDragOver={(e) => e.preventDefault()}
       >
         <div
