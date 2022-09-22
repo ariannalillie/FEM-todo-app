@@ -20,28 +20,18 @@ function App() {
     setIsDark(!isDark);
   };
 
+  // Save reference for the draggedItem and dragOverItem
+  const draggedItem = useRef(null);
+  const dragOverItem = useRef(null);
 
-  const dragItem = useRef();
-  const dragOverItem = useRef();
-
-  const dragStart = (e, position) => {
-    console.log(dragItem.current = position);
-    console.log(e.target.innerHTML);
-  };
-
-  const dragEnter = (e, position) => {
-    console.log(dragOverItem.current = position);
-    console.log(e.target.innerHTML);
-  };
-
-  const drop = () => {
-    const copyListItems = [...todos];
-    const dragItemContent = copyListItems[dragItem.current];
-    copyListItems.splice(dragItem.current, 1);
-    copyListItems.splice(dragOverItem.current, 0, dragItemContent);
-    dragItem.current = null;
+  // Handle sorting the todos after item is dragged and dropped
+  const handleSort = () => {
+    let items = [...todos];
+    const draggedItemContent = items.splice(draggedItem.current, 1)[0];
+    items.splice(dragOverItem.current, 0, draggedItemContent);
+    draggedItem.current = null;
     dragOverItem.current = null;
-    setTodos(copyListItems);
+    setTodos(items);
   };
 
   return (
@@ -68,9 +58,9 @@ function App() {
               idx={idx}
               isDark={isDark}
               checkboxClass="checked"
-              drop={drop}
-              dragEnter={dragEnter}
-              dragStart={dragStart}
+              draggedItem={draggedItem}
+              dragOverItem={dragOverItem}
+              handleSort={handleSort}
             />
           );
         })}
