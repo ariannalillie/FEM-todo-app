@@ -175,11 +175,17 @@ body {
 }
 
 .text {
-  margin: 0 15px;
   font-size: 12px;
+}
+
+.text:hover {
+  color: hsl(220, 98%, 61%);
+}
+
+.side-text {
+  margin: 0 15px;
 }
 
 .filter-text {
   margin: 0 5px;
-  font-size: 12px;
 }

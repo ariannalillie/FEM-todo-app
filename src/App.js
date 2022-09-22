@@ -65,13 +65,13 @@ function App() {
           );
         })}
         <div className={isDark ? "bottom-container-dark" :"bottom-container"}>
-          <p className="text">{todos.length} items left</p>
+          <p className="text side-text">{todos.length} items left</p>
           <div className="filter-buttons">
-            <p className="filter-text">All</p>
-            <p className="filter-text">Active</p>
-            <p className="filter-text">Completed</p>
+            <p className="text filter-text">All</p>
+            <p className="text filter-text">Active</p>
+            <p className="text filter-text">Completed</p>
           </div>
-          <p className="text">Clear Completed</p>
+          <p className="text side-text" onClick={() => setTodos([])}>Clear Completed</p>
         </div>
       </div>
     </div>
