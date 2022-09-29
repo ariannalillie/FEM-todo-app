@@ -61,6 +61,7 @@ function App() {
               draggedItem={draggedItem}
               dragOverItem={dragOverItem}
               handleSort={handleSort}
+              todos={todos}
             />
           );
         })}

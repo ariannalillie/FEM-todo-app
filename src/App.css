@@ -52,6 +52,9 @@ body {
 
 input::placeholder {
   padding-left: 20px;
+  font-size: 18px;
+  color: hsl(234, 11%, 52%);
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .input-dark {

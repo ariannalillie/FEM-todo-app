@@ -1,7 +1,14 @@
 import checkIcon from "./images/icon-check.svg";
 import { useState } from "react";
 
-export const Todo = ({ todo, idx, isDark, draggedItem, dragOverItem, handleSort}) => {
+export const Todo = ({
+  todo,
+  idx,
+  isDark,
+  draggedItem,
+  dragOverItem,
+  handleSort,
+}) => {
   const [isChecked, setIsChecked] = useState(false);
   const [dragStarted, setDragStarted] = useState(false);
 
@@ -10,7 +17,7 @@ export const Todo = ({ todo, idx, isDark, draggedItem, dragOverItem, handleSort}
     setDragStarted(true);
   };
 
-  const endDrag = () => {  
+  const endDrag = () => {
     setDragStarted(false);
     handleSort();
   };
@@ -20,10 +27,10 @@ export const Todo = ({ todo, idx, isDark, draggedItem, dragOverItem, handleSort}
       <div
         key={idx}
         className={isDark ? "list-item-dark" : "list-item"}
-        style={{ opacity: dragStarted ? .3 : 1 }}
+        style={{ opacity: dragStarted ? 0.3 : 1 }}
         draggable
         onDragStart={startDrag}
-        onDragEnter={(e) => dragOverItem.current = idx}
+        onDragEnter={(e) => (dragOverItem.current = idx)}
         onDragEnd={endDrag}
         onDragOver={(e) => e.preventDefault()}
       >
